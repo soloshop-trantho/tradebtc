@@ -12,7 +12,7 @@ STATE_FILE = "alerted.json"
 
 
 def fetch_klines(symbol, interval, limit=10):
-    url = f"https://api.binance.com/api/v3/klines?symbol={symbol}&interval={interval}&limit={limit}"
+  url = f"https://data-api.binance.vision/api/v3/klines?symbol={symbol}&interval={interval}&limit={limit}"
     with urlopen(url) as res:
         data = json.loads(res.read())
     return [
