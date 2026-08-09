@@ -12,7 +12,7 @@ STATE_FILE = "alerted.json"
 
 
 def fetch_klines(symbol, interval, limit=10):
-  url = f"https://data-api.binance.vision/api/v3/klines?symbol={symbol}&interval={interval}&limit={limit}"
+    url = f"https://data-api.binance.vision/api/v3/klines?symbol={symbol}&interval={interval}&limit={limit}"
     with urlopen(url) as res:
         data = json.loads(res.read())
     return [
@@ -22,7 +22,6 @@ def fetch_klines(symbol, interval, limit=10):
 
 
 def detect_hammer(candles, idx):
-    """Trả về 'hammer' (sau xu hướng giảm) hoặc 'hammer_like' (bóng dưới dài, không rõ xu hướng), hoặc None."""
     if idx < 2:
         return None
     cur = candles[idx]
@@ -47,7 +46,7 @@ def load_state():
 
 
 def save_state(state):
-    trimmed = sorted(state)[-500:]  # chỉ giữ 500 mục gần nhất, tránh file phình to
+    trimmed = sorted(state)[-500:]
     with open(STATE_FILE, "w") as f:
         json.dump(trimmed, f)
 
@@ -66,7 +65,7 @@ def main():
         candles = fetch_klines(SYMBOL, interval, limit=10)
         idx = len(candles) - 1
         if candles[idx]["closeTime"] > now_ms:
-            idx -= 1  # bỏ nến đang chạy dở, chỉ xét nến đã đóng
+            idx -= 1
         if idx < 2:
             continue
 
