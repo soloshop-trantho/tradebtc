@@ -20,12 +20,12 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Chạy kiểm tra mô hình Hammer
+      - name: Chạy kiểm tra mô hình nến
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          SYMBOL: BTCUSDT
-          INTERVALS: 1h,4h
+          SYMBOLS: BTCUSDT,ETHUSDT,SOLUSDT,XRPUSDT,NEARUSDT
+          INTERVALS: 1h,4h,1d
         run: python check_hammer.py
 
       - name: Lưu lại trạng thái đã báo (tránh báo trùng)
