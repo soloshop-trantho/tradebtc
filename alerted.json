@@ -1,1 +1,1 @@
-{"alerted": ["hammer_BTCUSDT_4h_1786420800000", "hammer_ETHUSDT_4h_1786420800000", "hammer_SOLUSDT_1h_1786431600000"], "pending": {"SOLUSDT_1h": {"candle_time": 1786431600000, "hammer_low": 75.42, "hammer_high": 75.87, "hammer_body_top": 75.82, "resistances": [75.71, 76.25]}}}
+{"alerted": ["hammer_BTCUSDT_4h_1786420800000", "hammer_ETHUSDT_4h_1786420800000", "hammer_SOLUSDT_1h_1786431600000"], "pending": {}}
